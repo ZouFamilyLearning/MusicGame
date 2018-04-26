@@ -7,3 +7,12 @@ C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.csproj
 C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.csproj.CoreCompileInputs.cache
 C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.exe
 C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.pdb
+C:\Users\ericm\Desktop\IDALearning\MusicGame\bin\Debug\MusicGame.exe.config
+C:\Users\ericm\Desktop\IDALearning\MusicGame\bin\Debug\MusicGame.exe
+C:\Users\ericm\Desktop\IDALearning\MusicGame\bin\Debug\MusicGame.pdb
+C:\Users\ericm\Desktop\IDALearning\MusicGame\obj\Debug\MusicGame.csprojResolveAssemblyReference.cache
+C:\Users\ericm\Desktop\IDALearning\MusicGame\obj\Debug\MusicGame.GameForm.resources
+C:\Users\ericm\Desktop\IDALearning\MusicGame\obj\Debug\MusicGame.csproj.GenerateResource.cache
+C:\Users\ericm\Desktop\IDALearning\MusicGame\obj\Debug\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\ericm\Desktop\IDALearning\MusicGame\obj\Debug\MusicGame.exe
+C:\Users\ericm\Desktop\IDALearning\MusicGame\obj\Debug\MusicGame.pdb

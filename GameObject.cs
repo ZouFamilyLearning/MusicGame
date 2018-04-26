@@ -34,9 +34,9 @@ namespace MusicGame
             int startJumpingTime = location.X - 16 - GameForm.distanceOfJumping;
             int endJumpingTime = location.X - 16;
 
-            if (player.position < startJumpingTime)
+            if (player.position.X < startJumpingTime)
                 return CollidingType.BEFORE_JUMPING;
-            else if (player.position < endJumpingTime)
+            else if (player.position.X < endJumpingTime)
                 return CollidingType.JUMPING;
             else
                 return CollidingType.COLLIDING;
@@ -44,7 +44,7 @@ namespace MusicGame
 
         public void setPosition(Point startPoint)
         {
-            location = new Point(startPoint.X + GameForm.distanceOfBojectes * position, startPoint.Y + heightOffet);
+            location = new Point(startPoint.X + GameForm.distanceOfObjectes * position, startPoint.Y + heightOffet);
 
             if (location.X < GameForm.distanceOfShowObject && location.X > 0)
             {

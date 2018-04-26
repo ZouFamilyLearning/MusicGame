@@ -16,20 +16,21 @@ namespace MusicGame
         static public int amountOfTempo = 300;
         static public int amountOfObjects = 300;
 
-        static public int distanceOfBojectes = 300;
-        static public int distanceOfJumping = (int)(distanceOfBojectes * 0.6f);
-        static public int distanceOfShowObject = 2000;
+        static public int distanceOfShowObject = 1500;
+        static public int distanceOfObjectes = (int)(distanceOfShowObject * 0.1f);
+        static public int distanceOfJumping = (int)(distanceOfObjectes * 0.6f);
 
-        // 每 interval 毫秒移動 speed 個 pixel；每1秒移動 1000 / interval * speed 個 pixel；約是移動 1000 / interval * speed / distanceBetweenTwoObjects 個 Tempo
-        Point startPoint = new Point(100, 100);
-        static int speed = 10;
+        static public int heightOfJumping = 100;
+
+        Point startPoint = new Point(100, 200);
+        static int speed = 6;
         Random random = new Random();
         Player player;
         bool isJumpClick = false;
 
         public GameForm()
         {
-            player = new Player(this, new Point(100, 100 - 32));
+            player = new Player(this, new Point(startPoint.X, startPoint.Y - 32));
             InitializeComponent();
             List<int> positionsOfSheet = new List<int>();
 
@@ -62,16 +63,19 @@ namespace MusicGame
         private void Update_Tick(object sender, EventArgs e)
         {
             startPoint = new Point(startPoint.X - speed, startPoint.Y);
-            foreach (GameObject gameObject in new List<GameObject>(gameObjects))
+
+            player.jump(startPoint);
+
+            foreach (GameObject gameObject in gameObjects)
             {
                 gameObject.setPosition(startPoint);
 
-                if(gameObject.checkCollide(player) == GameObject.CollidingType.BEFORE_JUMPING)
+                if (gameObject.checkCollide(player) == GameObject.CollidingType.BEFORE_JUMPING)
                 {
                 }
-                else if(gameObject.checkCollide(player) == GameObject.CollidingType.JUMPING)
+                else if (gameObject.checkCollide(player) == GameObject.CollidingType.JUMPING)
                 {
-                    if(isJumpClick == true)
+                    if (isJumpClick == true)
                     {
                         Console.Clear();
                         Console.WriteLine("Jump!");
@@ -80,7 +84,7 @@ namespace MusicGame
                 }
                 else if (gameObject.checkCollide(player) == GameObject.CollidingType.COLLIDING)
                 {
-                    if(gameObject.hasJumped == false && gameObject.hasCollided == false)
+                    if (gameObject.hasJumped == false && gameObject.hasCollided == false)
                     {
                         Console.Clear();
                         Console.WriteLine("Collided!");
@@ -95,6 +99,7 @@ namespace MusicGame
 
         private void Jump_Click(object sender, EventArgs e)
         {
+            player.topPoint = new Point(player.position.X + distanceOfJumping / 2 - startPoint.X, heightOfJumping);
             isJumpClick = true;
         }
     }

@@ -13,6 +13,8 @@ namespace MusicGame
         public override void collide(Player player)
         {
             player.score += hp;
+            hasCollided = true;
+            form.Controls.Remove(box);
         }
 
         public HealBox(int hp, int position, GameForm form) : base("Images//HealBox.png", position, form)
