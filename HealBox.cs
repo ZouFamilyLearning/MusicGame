@@ -17,6 +17,7 @@ namespace MusicGame
 
         public HealBox(int hp, int position, GameForm form) : base("Images//HealBox.png", position, form)
         {
+            this.heightOffet = -32;
             this.hp = hp;
         }
     }

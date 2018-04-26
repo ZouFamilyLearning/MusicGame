@@ -70,6 +70,7 @@
     <Content Include="Images\Obstacle.png" />
     <Content Include="Images\HealBox.png" />
     <Content Include="Images\Platform.png" />
+    <Content Include="Images\Player.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

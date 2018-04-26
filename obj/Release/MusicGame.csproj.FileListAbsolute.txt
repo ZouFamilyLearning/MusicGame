@@ -1,0 +1,8 @@
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\bin\Release\MusicGame.exe.config
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\bin\Release\MusicGame.exe
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\bin\Release\MusicGame.pdb
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Release\MusicGame.GameForm.resources
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Release\MusicGame.csproj.GenerateResource.cache
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Release\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Release\MusicGame.exe
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Release\MusicGame.pdb

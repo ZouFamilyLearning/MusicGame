@@ -13,6 +13,7 @@ namespace MusicGame
 
         public Obstacle(int damage, int reduceScore, int position, GameForm form) : base("Images//Obstacle.png", position, form)
         {
+            this.heightOffet = -32;
             this.damage = damage;
             this.reduceScore = reduceScore;
         }
