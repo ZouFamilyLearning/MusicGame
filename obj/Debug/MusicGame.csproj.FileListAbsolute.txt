@@ -1,0 +1,9 @@
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\bin\Debug\MusicGame.exe.config
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\bin\Debug\MusicGame.exe
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\bin\Debug\MusicGame.pdb
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.csprojResolveAssemblyReference.cache
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.GameForm.resources
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.csproj.GenerateResource.cache
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.csproj.CoreCompileInputs.cache
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.exe
+C:\Users\captain\Documents\GitHub\MusicGame\MusicGame\obj\Debug\MusicGame.pdb
