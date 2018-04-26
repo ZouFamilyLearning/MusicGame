@@ -12,7 +12,7 @@ namespace MusicGame
     {
         public enum CollidingType { BEFORE_JUMPING, JUMPING, COLLIDING}
         public PictureBox box = new PictureBox();
-        public int position;
+        public int index;
         abstract public void collide(Player player);
         public GameForm form;
         public int heightOffet = 0;
@@ -20,31 +20,41 @@ namespace MusicGame
         public bool hasJumped = false;
         public bool hasCollided = false;
         bool isAddControl = false;
+        public Point position
+        {
+            get
+            {
+                return box.Location;
+            }
+            set
+            {
+                box.Location = value;
+            }
+        }
 
         public GameObject(string imageSource, int position, GameForm form)
         {
             box.Load(imageSource);
             box.SizeMode = PictureBoxSizeMode.AutoSize;
             this.form = form;
-            this.position = position;
+            this.index = position;
         }
 
-        public CollidingType checkCollide(Player player)
+        public void checkCollide(Player player)
         {
-            int startJumpingTime = location.X - 16 - GameForm.distanceOfJumping;
-            int endJumpingTime = location.X - 16;
-
-            if (player.position.X < startJumpingTime)
-                return CollidingType.BEFORE_JUMPING;
-            else if (player.position.X < endJumpingTime)
-                return CollidingType.JUMPING;
-            else
-                return CollidingType.COLLIDING;
+            if(Math.Abs(player.position.X - position.X) < GameForm.widthOfObject && Math.Abs(player.position.Y - position.Y) < GameForm.widthOfObject)
+            {
+                if (hasCollided == false)
+                {
+                    collide(player);
+                    hasCollided = true;
+                }
+            }
         }
 
         public void setPosition(Point startPoint)
         {
-            location = new Point(startPoint.X + GameForm.distanceOfObjectes * position, startPoint.Y + heightOffet);
+            location = new Point(startPoint.X + GameForm.distanceOfObjectes * index, startPoint.Y + heightOffet);
 
             if (location.X < GameForm.distanceOfShowObject && location.X > 0)
             {

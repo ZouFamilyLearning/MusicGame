@@ -13,7 +13,6 @@ namespace MusicGame
         public override void collide(Player player)
         {
             player.score += hp;
-            hasCollided = true;
             form.Controls.Remove(box);
         }
 

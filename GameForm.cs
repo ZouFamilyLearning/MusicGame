@@ -16,17 +16,17 @@ namespace MusicGame
         static public int amountOfTempo = 300;
         static public int amountOfObjects = 300;
 
-        static public int distanceOfShowObject = 1500;
+        static public int distanceOfShowObject = 2000;
         static public int distanceOfObjectes = (int)(distanceOfShowObject * 0.1f);
-        static public int distanceOfJumping = (int)(distanceOfObjectes * 0.6f);
+        static public int distanceOfJumping = (int)(distanceOfObjectes * 0.8f);
+        static public int widthOfObject = 30;
 
         static public int heightOfJumping = 100;
 
         Point startPoint = new Point(100, 200);
-        static int speed = 6;
+        static int speed = 10;
         Random random = new Random();
         Player player;
-        bool isJumpClick = false;
 
         public GameForm()
         {
@@ -70,37 +70,18 @@ namespace MusicGame
             {
                 gameObject.setPosition(startPoint);
 
-                if (gameObject.checkCollide(player) == GameObject.CollidingType.BEFORE_JUMPING)
-                {
-                }
-                else if (gameObject.checkCollide(player) == GameObject.CollidingType.JUMPING)
-                {
-                    if (isJumpClick == true)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Jump!");
-                        gameObject.hasJumped = true;
-                    }
-                }
-                else if (gameObject.checkCollide(player) == GameObject.CollidingType.COLLIDING)
-                {
-                    if (gameObject.hasJumped == false && gameObject.hasCollided == false)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Collided!");
-                        gameObject.hasCollided = true;
-                        gameObject.collide(player);
-                    }
-                }
+                gameObject.checkCollide(player);
             }
-
-            isJumpClick = false;
+            
         }
 
         private void Jump_Click(object sender, EventArgs e)
         {
-            player.topPoint = new Point(player.position.X + distanceOfJumping / 2 - startPoint.X, heightOfJumping);
-            isJumpClick = true;
+            if(player.canJump == true)
+            {
+                player.topPoint = new Point(player.position.X + distanceOfJumping / 2 - startPoint.X, heightOfJumping);
+                player.canJump = false;
+            }
         }
     }
 }

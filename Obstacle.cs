@@ -22,7 +22,6 @@ namespace MusicGame
         {
             player.hp -= damage;
             player.score -= reduceScore;
-            hasCollided = true;
             form.Controls.Remove(box);
         }
     }

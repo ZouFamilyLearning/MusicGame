@@ -14,29 +14,40 @@ namespace MusicGame
         public int hp;
         PictureBox box = new PictureBox();
         public Point topPoint;
-        public Point position;
+        public Point position
+        {
+            get
+            {
+                return box.Location;
+            }
+            set
+            {
+                box.Location = value;
+            }
+        }
+        public bool canJump = true;
 
         public Player(GameForm form, Point startPoint)
         {
-            position = startPoint;
             box.Load("Images//Player.png");
             box.SizeMode = PictureBoxSizeMode.AutoSize;
-            box.Location = startPoint;
+            position = startPoint;
             form.Controls.Add(box);
         }
 
         public void jump(Point startPoint)
         {
             float x = startPoint.X + topPoint.X - position.X;
-            float y = 0;
-
             float a = (float)topPoint.Y / (GameForm.distanceOfJumping / 2 * GameForm.distanceOfJumping / 2);
-            if (Math.Abs(x) < GameForm.distanceOfJumping / 2)
+            float y = y = -a * (x * x) + topPoint.Y;
+
+            if (y < 0)
             {
-                y = -a * (x * x) + topPoint.Y;
+                y = 0;
+                canJump = true;
             }
 
-            box.Location = new Point(position.X, position.Y - (int)y);
+            position = new Point(position.X, startPoint.Y - 32 - (int)y);
         }
     }
 }
