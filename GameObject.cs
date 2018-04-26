@@ -10,21 +10,21 @@ namespace MusicGame
 {
     abstract public class GameObject
     {
-        public PictureBox box = new PictureBox();
+        public PictureBox box;
         public int position;
         abstract public void collide(Player player);
+        string imageSource;
 
         public GameObject(string imageSource, int position, GameForm form)
         {
             this.position = position;
-            box.Load(imageSource);
-            box.SizeMode = PictureBoxSizeMode.AutoSize;
+            this.imageSource = imageSource;
             form.Controls.Add(box);
         }
 
         public void setPosition(Point startPoint, int interval)
         {
-            box.Location = new Point(startPoint.X + interval * position, startPoint.Y);
+            Point Location = new Point(startPoint.X + interval * position, startPoint.Y);
         }
     }
 }

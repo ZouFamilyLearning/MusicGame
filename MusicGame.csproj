@@ -67,8 +67,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Obstacle.png" />
     <Content Include="Images\HealBox.png" />
+    <Content Include="Images\Obstacle.png" />
     <Content Include="Images\Platform.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

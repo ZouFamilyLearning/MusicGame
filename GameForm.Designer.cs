@@ -35,6 +35,7 @@
             // Update
             // 
             this.Update.Enabled = true;
+            this.Update.Interval = 1;
             this.Update.Tick += new System.EventHandler(this.Update_Tick_1);
             // 
             // GameForm

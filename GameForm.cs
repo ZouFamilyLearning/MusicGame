@@ -14,7 +14,6 @@ namespace MusicGame
     {
         List<GameObject> gameObjects = new List<GameObject>();
         int amountOfTempo = 300;
-        int amountOfObjects = 100;
         int interval = 32;
         Point startPoint = new Point(100, 100);
         Random random = new Random();
@@ -24,26 +23,21 @@ namespace MusicGame
             InitializeComponent();
             List<int> positionsOfSheet = new List<int>();
 
-            for (int i = 0; i < amountOfTempo; i++)
-                positionsOfSheet.Add(i);
 
-            for (int i = 0; i < amountOfObjects; i++)
+            for (int i = 0; i < amountOfTempo; i++)
             {
                 GameObject newObject;
-                int positionIndex = random.Next(0, positionsOfSheet.Count);
-                int position = positionsOfSheet[positionIndex];
-                positionsOfSheet.RemoveAt(positionIndex);
                 int tyoe = random.Next(0, 3);
                 switch (tyoe)
                 {
                     case 0:
-                        newObject = new Platfrom(random.Next(1, 20), position, this);
+                        newObject = new Platfrom(random.Next(1, 20), i, this);
                         break;
                     case 1:
-                        newObject = new HealBox(random.Next(1, 10), position, this);
+                        newObject = new HealBox(random.Next(1, 10), i, this);
                         break;
                     default:
-                        newObject = new Obstacle(random.Next(1, 50), position, random.Next(30, 50), this);
+                        newObject = new Obstacle(random.Next(1, 50), random.Next(30, 50), i, this);
                         break;
                 }
                 gameObjects.Add(newObject);
